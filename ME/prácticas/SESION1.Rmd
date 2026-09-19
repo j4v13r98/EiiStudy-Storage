@@ -1,0 +1,59 @@
+---
+title: "SESION1"
+author: "Nicolás Borysov Ravelo"
+date: "2026-09-17"
+output: html_document
+---
+
+
+**Primero:** comprobar los paquetes cargados en memoria. En caso de no tener instalado el paquete _ggplot2_, se instala y se carga.
+
+```{r primero, eval=FALSE}
+search()
+if (! require(ggplot2)) install.packages("ggplot2")
+library(ggplot2)
+```
+
+**Segundo:** Se obtiene información acerca del paquete.
+
+```{r primero, echo=FALSE}
+library(help=ggplot2)
+```
+
+**Tercero:** se obtiene ayuda sobre el conjuntos de datos. Se guarda en la variable _data_ y se muestra.
+
+```{r}
+help(diamonds)
+data<-diamonds
+View(data)
+head(data)
+tail(data)
+```
+
+**Cuarto:** se muestra la estructura de cada variable y se muestran sus nombres.
+
+```{r}
+str(data)
+names(data)
+```
+
+**Quinto:** se hace un análisis de la variable price en particular.
+
+```{r}
+data$price
+data$price[270]
+data$price[data$price>18000]
+mean(data$price)
+max(data$carat)
+```
+
+Implementación de un **histograma**
+
+```{r}
+hist(data$price)
+```
+
+
+
+
+
